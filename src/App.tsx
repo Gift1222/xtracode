@@ -108,7 +108,7 @@ export const fallbackPortfolio: Portfolio = {
     email: 'giftchimwendo000@gmail.com',
     image: '/assets/profile-portrait.png',
     years: '3+',
-    projects: '8+',
+    projects: '9+',
     clients: '10+',
   },
   skills: ['Software Development', 'Machine Learning', 'Data Analysis', 'Cloud Technologies', 'ICT Support, Graphic '],
