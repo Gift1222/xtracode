@@ -1,0 +1,11 @@
+{
+  "title": "Alex Morgan — Software, Data & ICT Consultant",
+  "description": "Showcase your skills and projects with a responsive portfolio management platform designed for software developers, data scientists, and ICT consultants.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
