@@ -102,7 +102,8 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .project-card { border: 1px solid var(--line); background: var(--paper); overflow: hidden; }
 .project-art { height: 280px; background: #22251f; position: relative; overflow: hidden; }
 .art-grid { position: absolute; inset: 0; opacity: .2; background-image: linear-gradient(#6b7064 1px, transparent 1px), linear-gradient(90deg, #6b7064 1px, transparent 1px); background-size: 32px 32px; }
-.project-number { position: absolute; top: 25px; left: 25px; color: white; font: 11px 'DM Mono'; }
+.project-snapshot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.project-number { z-index: 2; text-shadow: 0 1px 6px rgba(0,0,0,.6);  position: absolute; top: 25px; left: 25px; color: white; font: 11px 'DM Mono'; }
 .art-window { position: absolute; width: 62%; height: 63%; right: 9%; bottom: -5px; border: 1px solid #62665d; background: #2e322b; padding: 17px; transform: rotate(-2deg); }
 .art-window > span { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #676b63; margin-right: 5px; }
 .chart-bars { height: 80%; display: flex; align-items: flex-end; gap: 8px; padding-top: 20px; }

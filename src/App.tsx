@@ -294,6 +294,10 @@ export function PortfolioHome() {
                     <span /><span /><span />
                     <div className="chart-bars"><i /><i /><i /><i /><i /></div>
                   </div>
+                  {project.snapshotUrls?.[0] && (
+                    <img className="project-snapshot" src={project.snapshotUrls[0]} alt={`${project.title} snapshot`} loading="lazy" onError={(event) => { event.currentTarget.style.display = 'none' }} />
+                  )}
+                  <div className="project-number">0{index + 1}</div>
                 </div>
                 <div className="project-content">
                   <div className="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
