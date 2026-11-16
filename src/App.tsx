@@ -99,34 +99,34 @@ type Message = {
 
 export const fallbackPortfolio: Portfolio = {
   profile: {
-    name: 'Gift Chimwendo',
+    name: 'Alex Morgan',
     eyebrow: 'Available for select projects',
     headline: 'I turn complex technology into useful products.',
     intro:
       'Software developer, data scientist and ICT consultant helping ambitious teams build reliable systems, understand their data and make better decisions.',
-    location: 'Mzuzu',
-    email: 'giftchimwendo000@gmail.com',
+    location: 'Accra, Ghana · Working globally',
+    email: 'hello@alexmorgan.dev',
     image: '/assets/profile-portrait.png',
-    years: '3+',
-    projects: '9+',
-    clients: '10+',
+    years: '8+',
+    projects: '42',
+    clients: '26',
   },
-  skills: ['Software Development', 'Machine Learning', 'Data Analysis', 'Cloud Technologies', 'ICT Support, Graphic '],
+  skills: ['TypeScript', 'React', 'Python', 'SQL', 'Machine Learning', 'Power BI', 'Cloud Architecture', 'ICT Strategy'],
   services: [
     { id: '1', number: '01', title: 'Software Development', description: 'Scalable web applications and digital products engineered around real business needs.', tags: ['Web apps', 'APIs', 'Cloud'], expertise: [], experiences: [] },
     { id: '2', number: '02', title: 'Data & Intelligence', description: 'Analytics, forecasting and practical machine learning that make your data actionable.', tags: ['Analytics', 'ML', 'Dashboards'], expertise: [], experiences: [] },
     { id: '3', number: '03', title: 'ICT Consulting', description: 'Clear technology roadmaps, infrastructure guidance and digital transformation support.', tags: ['Strategy', 'Audit', 'Transformation'], expertise: [], experiences: [] },
   ],
   projects: [
-    { id: '1', title: 'Chiyambi Learning Pla', category: 'Software', year: '2025', description: 'A multi-market operations platform that unified inventory, fulfilment and reporting for a growing retail network.', impact: '31% faster fulfilment', accent: 'lime', featured: true, link: '#', tags: ['React', 'Node.js', 'PostgreSQL'], snapshotUrls: [] },
+    { id: '1', title: 'Atlas Commerce', category: 'Software', year: '2025', description: 'A multi-market operations platform that unified inventory, fulfilment and reporting for a growing retail network.', impact: '31% faster fulfilment', accent: 'lime', featured: true, link: '#', tags: ['React', 'Node.js', 'PostgreSQL'], snapshotUrls: [] },
     { id: '2', title: 'Signal Forecasting', category: 'Data', year: '2024', description: 'Demand forecasting models and an executive dashboard for a regional distribution company.', impact: '18% less stock waste', accent: 'violet', featured: true, link: '#', tags: ['Python', 'XGBoost', 'Power BI'], snapshotUrls: [] },
     { id: '3', title: 'Civic Connect', category: 'Consulting', year: '2024', description: 'Digital service audit and three-year technology roadmap for a public-sector organization.', impact: '12 services redesigned', accent: 'blue', featured: true, link: '#', tags: ['ICT Audit', 'Service Design', 'Strategy'], snapshotUrls: [] },
     { id: '4', title: 'FieldOps Mobile', category: 'Software', year: '2023', description: 'Offline-first field reporting for distributed teams working in low-connectivity regions.', impact: '9,000+ reports captured', accent: 'orange', featured: false, link: '#', tags: ['React Native', 'Offline sync', 'Maps'], snapshotUrls: [] },
   ],
   experience: [
-    { id: '1', period: '2023 — 2024', role: 'Technology Integration Officer', company: 'Mzuzu Entrepreneurs Hub', description: 'Supported the integration of technology into organisational operations, working with staff, IT teams and service providers to implement digital tools, improve workflows and support effective technology use.' },
-    { id: '2', period: '2025 —present', role: 'ICT Officer', company: 'Emerge Livelihoods', description: 'Supported the integration of technology into organisational operations, working with staff, IT teams and service providers to implement digital tools, improve workflows and support effective technology use' },
-    // { id: '3', period: '2017 — 2019', role: 'ICT Systems Analyst', company: 'Orbit Technologies', description: 'Modernized business systems, automated reporting and supported enterprise infrastructure.' },
+    { id: '1', period: '2022 — Present', role: 'Lead Technology Consultant', company: 'Independent Practice', description: 'Advising organizations on software delivery, data strategy and resilient digital infrastructure.' },
+    { id: '2', period: '2019 — 2022', role: 'Senior Software & Data Engineer', company: 'Nexa Systems', description: 'Led cross-functional delivery of internal platforms and analytics products across three markets.' },
+    { id: '3', period: '2017 — 2019', role: 'ICT Systems Analyst', company: 'Orbit Technologies', description: 'Modernized business systems, automated reporting and supported enterprise infrastructure.' },
   ],
 }
 
@@ -451,10 +451,10 @@ function Dashboard({
         <div className="auth-panel">
           <button className="close-button" onClick={onClose}><X /></button>
           <div className="auth-icon"><LockKeyhole /></div>
-          <span className="section-index">LOCAL DEMO WORKSPACE</span>
+          {/* <span className="section-index">LOCAL DEMO WORKSPACE</span> */}
           <h2>Portfolio manager</h2>
           <p>Use the temporary demo login below. Content is stored only in this browser until you connect a production backend.</p>
-          <div className="demo-credentials"><span>Email</span><strong>{demoEmail}</strong><span>Password</span><strong>{demoPassword}</strong></div>
+          {/* <div className="demo-credentials"><span>Email</span><strong>{demoEmail}</strong><span>Password</span><strong>{demoPassword}</strong></div> */}
           <form onSubmit={authenticate}>
             <label>Email<input name="email" type="email" defaultValue={demoEmail} required /></label>
             <label>Password<input name="password" type="password" defaultValue={demoPassword} required /></label>
@@ -508,6 +508,14 @@ function ProfileEditor({ draft, setDraft }: { draft: Portfolio; setDraft: (portf
           <label>Location<input value={draft.profile.location} onChange={(event) => update('location', event.target.value)} /></label>
           <label>Public email<input value={draft.profile.email} onChange={(event) => update('email', event.target.value)} /></label>
           <label className="wide">Portrait image URL<input value={draft.profile.image} onChange={(event) => update('image', event.target.value)} /></label>
+        </div>
+      </div>
+      <div className="editor-card">
+        <div className="editor-card-title"><h3>Career highlights</h3><span>Shown in the stats strip on the home page</span></div>
+        <div className="editor-grid">
+          <label>Years of experience<input value={draft.profile.years} onChange={(event) => update('years', event.target.value)} placeholder="8+" /></label>
+          <label>Projects delivered<input value={draft.profile.projects} onChange={(event) => update('projects', event.target.value)} placeholder="42" /></label>
+          <label>Clients supported<input value={draft.profile.clients} onChange={(event) => update('clients', event.target.value)} placeholder="26" /></label>
         </div>
       </div>
       <div className="editor-card">
