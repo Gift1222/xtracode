@@ -436,7 +436,7 @@ function Dashboard({
       sessionStorage.setItem(demoSessionKey, 'true')
       onSessionChange(true)
     } else {
-      setAuthError('Use the demo email and password shown below.')
+      setAuthError('Incorrect email or password.')
     }
   }
 
@@ -453,11 +453,11 @@ function Dashboard({
           <div className="auth-icon"><LockKeyhole /></div>
           {/* <span className="section-index">LOCAL DEMO WORKSPACE</span> */}
           <h2>Portfolio manager</h2>
-          <p>Use the temporary demo login below. Content is stored only in this browser until you connect a production backend.</p>
+          <p>Sign in to manage your portfolio content.</p>
           {/* <div className="demo-credentials"><span>Email</span><strong>{demoEmail}</strong><span>Password</span><strong>{demoPassword}</strong></div> */}
           <form onSubmit={authenticate}>
-            <label>Email<input name="email" type="email" defaultValue={demoEmail} required /></label>
-            <label>Password<input name="password" type="password" defaultValue={demoPassword} required /></label>
+            <label>Email<input name="email" type="email" autoComplete="off" required /></label>
+            <label>Password<input name="password" type="password" autoComplete="off" required /></label>
             <button className="primary-button" type="submit">Enter manager <ArrowRight size={18} /></button>
           </form>
           {authError && <div className="auth-error">{authError}</div>}
